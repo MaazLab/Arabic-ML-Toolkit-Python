@@ -1,0 +1,42 @@
+Semi-Supervised Learning Summary – Iris & PIMA Datasets
+
+📊 Final Results Overview
+
+Dataset	Method	Accuracy
+iris	Supervised Baseline	100.00%
+iris	Self-Training	93.33%
+iris	Co-Training	86.67%
+iris	Label Propagation	33.33%
+pima	Supervised Baseline	64.71%
+pima	Self-Training	66.67%
+pima	Co-Training	65.36%
+pima	Label Propagation	65.36%
+🌸 IRIS Dataset Insights
+Baseline Accuracy (Supervised with 10% labeled data): Perfect classification.
+Self-Training reached high accuracy (93.33%) and remained stable over iterations.
+Co-Training showed good early performance but decreased slightly after adding noisy labels.
+Label Propagation failed (33.33%), likely due to:
+The algorithm’s assumption of smooth label transitions.
+Difficulty handling well-separated but overlapping multi-class distributions.
+✅ Best Semi-Supervised Method: Self-Training
+❌ Least Effective: Label Propagation
+
+🧬 PIMA Diabetes Dataset Insights
+Baseline Accuracy (with 10% labeled data): 64.71%
+Self-Training improved performance slightly to 66.67%.
+Co-Training and Label Propagation reached 65.36%, showing minor improvement over the baseline.
+Accuracy fluctuated across iterations, suggesting that:
+The benefit of unlabeled data was limited.
+Adding pseudo-labeled examples introduced some noise.
+The dataset may have overlapping or noisy class boundaries.
+✅ Best Semi-Supervised Method: Self-Training (by a small margin)
+⚠️ Co-Training and Label Propagation performed similarly, but with no significant edge over baseline.
+
+🔎 General Conclusions
+Self-Training is the most reliable approach across both datasets.
+Co-Training is sensitive to feature splits and pseudo-label noise.
+Label Propagation requires well-structured feature space and works better for binary classification (like PIMA).
+Semi-supervised learning helps most when:
+The labeled dataset is small,
+The unlabeled data is clean and well-separated,
+And the model can avoid error reinforcement when labeling new samples.

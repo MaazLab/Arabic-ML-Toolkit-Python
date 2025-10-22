@@ -1,0 +1,21 @@
+Model Performance Summary (Part 1)
+The classification task aimed to distinguish between nonspam and spam messages using Support Vector Machines (SVM) and Bernoulli Naive Bayes. The evaluation metrics show strong performance with a clear leaning toward effective spam detection.
+
+✅ Key Metrics:
+
+Accuracy: 82.74% – The model correctly classified the majority of messages.
+AUC (Area Under ROC Curve): 0.9585 – Excellent separability between spam and nonspam.
+F1 Score: 0.8383 – Balanced performance across precision and recall.
+Kappa: 0.6604 – Substantial agreement beyond chance.
+📌 Class-wise Performance:
+
+Nonspam (Positive Class):
+Sensitivity (Recall): 0.7380 – Some nonspam messages were misclassified as spam.
+Negative Predictive Value (NPV): 0.7052 – Indicates missed detections of nonspam.
+Spam:
+Specificity: 0.9650 – The model very effectively identifies spam messages.
+Precision: 0.9701 – Very few false positives among spam predictions.
+📈 Highlights:
+
+High AUC and specificity suggest the model is highly effective at catching spam while keeping false alarms low.
+The slightly lower sensitivity on nonspam indicates room for improvement in avoiding misclassification of genuine messages.

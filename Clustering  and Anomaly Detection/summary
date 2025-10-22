@@ -1,0 +1,51 @@
+🔍 Clustering & Anomaly Detection Summary (Iris Dataset)
+
+📌 Clustering Results
+✅ K-Means Clustering
+
+Optimal clusters (k): 2 (based on silhouette score)
+Silhouette Score: 0.6521 (indicates good cluster separation)
+Accuracy: 67.2% (mapped against actual species)
+Adjusted Rand Index (ARI): 0.5794 (moderate alignment with true labels)
+🔍 Observation: K-means effectively distinguished Setosa but merged Versicolor and Virginica, reflecting the natural overlap in these species' features.
+
+✅ DBSCAN Clustering
+
+Suggested eps value: 0.395
+Clusters identified: 4 (plus noise)
+Noise points: 68 (out of 150, ~45%)
+Silhouette Score: 0.3773 (lower cohesion and separation)
+ARI: 0.3556 (low alignment with ground truth)
+🔍 Observation: DBSCAN effectively isolated Setosa, but struggled to distinguish Versicolor and Virginica, possibly due to parameter sensitivity and high noise detection.
+
+⚠️ Anomaly Detection Results
+🔹 Number of Outliers Detected:
+
+
+Method	Outliers
+KNN Distance	7
+Isolation Forest	7
+LOF (Local Outlier Factor)	7
+DBSCAN Noise	68
+🔄 Overlap Among Methods:
+
+All four methods agreed on 4 anomalies
+Strong overlap between KNN, LOF, and ISO, indicating consistent detection of a few key anomalies
+📊 Anomalies by Species:
+
+
+Method	Setosa (%)	Versicolor (%)	Virginica (%)
+KNN	4.76%	2.50%	10.00%
+ISO	4.76%	0.00%	12.50%
+LOF	7.14%	2.50%	7.50%
+🔍 Observation:
+
+Virginica was most frequently marked as anomalous across all methods.
+Setosa remained mostly stable, reinforcing its distinctiveness in the dataset.
+The agreement across multiple methods strengthens the validity of detected anomalies.
+🧠 Conclusions
+
+K-Means is effective for clearly separated clusters but merges overlapping classes.
+DBSCAN identifies noise well but requires careful parameter tuning; performance is sensitive to eps and minPts.
+Anomaly Detection shows consistent results across KNN, LOF, and Isolation Forest, particularly flagging Virginica as more variable or noisy.
+Combining multiple unsupervised methods provides a robust view of the underlying data structure, helping validate both clusters and outliers.

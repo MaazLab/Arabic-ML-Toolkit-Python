@@ -1,0 +1,20 @@
+Classification Performance Summary (Part 2 – Iris Dataset)
+The classification task focused on predicting the species of iris flowers (Setosa, Versicolor, Virginica) using four machine learning models. Overall, all models demonstrated high accuracy, with minor differences in class-wise performance.
+
+📋 Model Comparison Summary
+
+Model	Accuracy	Kappa	Setosa Sensitivity	Versicolor Sensitivity	Virginica Sensitivity	Balanced Accuracy (avg)
+KNN	97.78%	0.9667	1.0000	1.0000	0.9333	0.9778
+Linear Regression	82.22%	0.7333	1.0000	0.6667	0.8000	0.8667
+Decision Tree	93.33%	0.9000	1.0000	0.9333	0.8667	0.9333
+Logistic Regression	95.56%	0.9333	1.0000	1.0000	0.8667	0.9556
+✅ Key Observations:
+Setosa was consistently classified with 100% accuracy across all models.
+KNN had the best overall performance, with near-perfect results and a balanced accuracy of 97.78%.
+Logistic Regression also performed excellently, especially in distinguishing Versicolor and Virginica.
+Linear Regression was the weakest of the four, mainly due to lower sensitivity for Versicolor and Virginica.
+All models achieved high specificity, especially for Setosa and Virginica.
+📌 Insights:
+KNN is highly effective on small, well-separated datasets like Iris, likely benefiting from the distance-based separation of clusters.
+Decision Trees and Logistic Regression are both reliable choices with solid interpretability and generalization.
+Linear Regression, while useful in regression problems, is less suited for multi-class classification due to its continuous output nature.
